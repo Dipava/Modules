@@ -58,4 +58,29 @@ resource "aws_route_table" "vpc-rt" {
 }
 
 
+resource "aws_security_group" "allow_traffic" {
+  name        = var.sg_name
+  description = var.sg_description
+  vpc_id      = aws_vpc.main.id
 
+  ingress {
+    description      = var.sg_ingress_description
+    from_port        = var.ingress_source_port
+    to_port          = var.ingress_destination_port
+    protocol         = "tcp"
+    cidr_blocks      = [aws_vpc.main.cidr_block]
+    ipv6_cidr_blocks = [aws_vpc.main.ipv6_cidr_block]
+  }
+
+  egress {
+    from_port        = 0
+    to_port          = 0
+    protocol         = "-1"
+    cidr_blocks      = ["0.0.0.0/0"]
+    ipv6_cidr_blocks = ["::/0"]
+  }
+
+  tags = {
+    Name = "allow_tls"
+  }
+}
