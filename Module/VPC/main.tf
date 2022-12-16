@@ -8,6 +8,7 @@ tags = {
     owners = local.owners
     environment = local.environment
     project = var.project
+    name = "${var.environment}-${var.project}"
     }
 }
 
@@ -31,9 +32,7 @@ resource "aws_subnet" "main_az1" {
   availability_zone = "${var.region}a"
   vpc_id = aws_vpc.main.id
   cidr_block = var.subnet_cidr
-  tags = {
-    Name = "Default subnet for ${var.region}a"
-    }
+  tags = local.tags
 }
 
 resource "aws_internet_gateway" "igw" {
@@ -64,20 +63,17 @@ resource "aws_security_group" "allow_traffic" {
   vpc_id      = aws_vpc.main.id
 
   ingress {
-    description      = var.sg_ingress_description
     from_port        = var.ingress_source_port
     to_port          = var.ingress_destination_port
-    protocol         = "tcp"
-    cidr_blocks      = [aws_vpc.main.cidr_block]
-    ipv6_cidr_blocks = [aws_vpc.main.ipv6_cidr_block]
+    protocol         = var.ingress_protocol
+    cidr_blocks      = var.ingress_cidr
   }
 
   egress {
-    from_port        = 0
-    to_port          = 0
-    protocol         = "-1"
-    cidr_blocks      = ["0.0.0.0/0"]
-    ipv6_cidr_blocks = ["::/0"]
+    from_port        = var.ingress_source_port
+    to_port          = var.ingress_destination_port
+    protocol         = var.ingress_destination_port
+    cidr_blocks      = var.ingress_cidr
   }
 
   tags = {
