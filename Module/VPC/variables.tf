@@ -16,6 +16,12 @@ variable "project" {
   default     = "linuxproject"
 }
 
+variable "vpc_name" {
+  description = "VPC Name"
+  type        = string
+  default     = " "
+}
+
 variable "cidr" {
   description = "Default CIDR"
   type        = string
@@ -45,6 +51,12 @@ variable "region" {
   description = "AWS Region"
   type        = string
   default     = "us-east-1"
+}
+
+variable "azs" {
+  description = "AWS AZ"
+  type        = string
+  default     = "us-east-1a"
 }
 
 variable "subnet_cidr" {

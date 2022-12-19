@@ -16,7 +16,7 @@ tags = {
 resource "aws_vpc" "main" {
   cidr_block       = var.cidr
   instance_tenancy = var.tenancy
-  Name = "${local.name}-vpc"
+  name = var.vpc_name
   enable_dns_support = var.enable_dns_support
   enable_dns_hostnames = var.enable_dns_hostnames
 
@@ -29,7 +29,7 @@ resource "aws_vpc" "main" {
 }
 
 resource "aws_subnet" "main_az1" {
-  availability_zone = "${var.region}a"
+  availability_zone = var.azs
   vpc_id = aws_vpc.main.id
   cidr_block = var.subnet_cidr
   tags = local.tags
