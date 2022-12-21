@@ -2,7 +2,7 @@ locals {
 
 environment = var.environment
 owners = var.owners
-project = linuxproject
+project = "linuxproject"
 name = "${var.environment}-${var.project}"
 tags = {
     owners = local.owners
