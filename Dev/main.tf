@@ -29,7 +29,7 @@ data "aws_ami" "amzlinux2" {
 }
 
 module "vpc" {
-  source  = "./modules/VPC"
+  source  = "./Module/VPC"
 
   vpc_name = "${local.name}-${var.vpc_name}"
   cidr = var.vpc_cidr_block
