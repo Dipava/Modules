@@ -7,8 +7,8 @@ name = "${local.environment}-${local.project}"
 tags = {
     owners = local.owners
     environment = local.environment
-    project = var.project
-    name = "${var.environment}-${var.project}"
+    project = local.project
+    name = "${local.environment}-${local.project}"
     }
 }
 
