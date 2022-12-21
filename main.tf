@@ -1,8 +1,8 @@
 locals {
 
-environment = dev
-owners = Dipava
-project = linuxproject
+environment = "dev"
+owners = "Dipava"
+project = "linuxproject"
 name = "${local.environment}-${local.project}"
 tags = {
     owners = local.owners

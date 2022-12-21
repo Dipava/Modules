@@ -1,26 +1,26 @@
 output "vpc_id" {
   description = "The ID of the VPC"
-  value       = module.vpc.id
+  value       = module.vpc.vpc_id
 }
 
 output "vpc_arn" {
   description = "The ARN of the VPC"
-  value       = module.vpc.arn
+  value       = module.vpc.vpc_arn
 }
 
 output "vpc_cidr_block" {
   description = "The CIDR block of the VPC"
-  value       = module.vpc.cidr_block
+  value       = module.vpc.vpc_cidr_block
 }
 
 output "vpc_main_route_table_id" {
   description = "The ID of the main route table associated with this VPC"
-  value       = module.vpc.main_route_table_id
+  value       = module.vpc.vpc_route_table_id
 }
 
 output "vpc_owner_id" {
   description = "The ID of the AWS account that owns the VPC"
-  value       = module.vpc.owner_id
+  value       = module.vpc.vpc_owner_id
 }
 
 output "vpc_subnets_ids" {
