@@ -36,7 +36,6 @@ resource "aws_subnet" "main_az1" {
 }
 
 resource "aws_internet_gateway" "igw" {
-  depends_on = aws_vpc.main
   vpc_id = aws_vpc.main.id
   tags = {
     Name = "${local.name}-IGW"
