@@ -37,10 +37,6 @@ module "vpc" {
   subnet_cidr  = var.vpc_subnets
   enable_dns_hostnames = false
   enable_dns_support   = true
-
-
-  tags = local.tags
-  vpc_tags = local.tags
 }
 
 resource "aws_instance" "test-vm" {
