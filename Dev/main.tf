@@ -48,7 +48,7 @@ resource "aws_instance" "test-vm" {
   instance_type = "t2.micro"
   associate_public_ip_address = true
   iam_instance_profile = "ec2-admin-role"
-  subnet_id = module.vpc.subnet_cidr
+  subnet_id = module.vpc.vpc_subnets
   vpc_security_group_ids = module.vpc.sg_id
   user_data = file("${path.module}/user_data.sh")
   tags = local.tags

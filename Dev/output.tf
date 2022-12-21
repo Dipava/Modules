@@ -10,54 +10,54 @@ output "vpc_arn" {
 
 output "vpc_cidr_block" {
   description = "The CIDR block of the VPC"
-  value       = module.vpc.
+  value       = module.vpc.cidr_block
 }
 
 output "vpc_main_route_table_id" {
   description = "The ID of the main route table associated with this VPC"
-  value       = aws_vpc.main.main_route_table_id
+  value       = module.vpc.main_route_table_id
 }
 
 output "vpc_owner_id" {
   description = "The ID of the AWS account that owns the VPC"
-  value       = aws_vpc.main.owner_id
+  value       = module.vpc.owner_id
 }
 
-output "vpc_subnets" {
+output "vpc_subnets_ids" {
   description = "List of IDs of private subnets"
-  value       = aws_subnet.main_az1.id
+  value       = module.vpc.vpc_subnets
 }
 
 
 output "vpc_subnet_arns" {
   description = "List of ARNs of private subnets"
-  value       = aws_subnet.main_az1.arn
+  value       = module.vpc.vpc_subnet_arns
 }
 
 output "vpc_subnets_cidr_blocks" {
   description = "List of cidr_blocks of private subnets"
-  value       = aws_subnet.main_az1.cidr_block
+  value       = module.vpc.vpc_subnets_cidr_blocks
 }
 
 output "main_route_table_ids" {
   description = "List of IDs of public route tables"
-  value       = aws_route_table.vpc-rt.id
+  value       = module.vpc.main_route_table_ids
 }
 
 output "igw_id" {
   description = "The ID of the Internet Gateway"
-  value       = aws_internet_gateway.igw.id
+  value       = module.vpc.igw_id
 }
 
 output "sg_id" {
-  description = "The ARN of the Internet Gateway"
-  value       = aws_security_group.allow_traffic.id
+  description = "The ID of the security group"
+  value       = module.vpc.sg_id
 }
 
 
 output "sg_arn" {
-  description = "The ARN of the Internet Gateway"
-  value       = aws_security_group.allow_traffic.arn
+  description = "The ARN of the security group"
+  value       = module.vpc.sg_arn
 }
 
 
