@@ -80,13 +80,13 @@ variable "sg_description" {
 
 variable "ingress_source_port" {
   description = "souce port for ingress rule"
-  type        = string
+  type        = number
   default     = " "
 }
 
 variable "ingress_destination_port" {
   description = "destination port for ingress rule"
-  type        = string
+  type        = number
   default     = " "
 }
 
@@ -104,13 +104,13 @@ variable "ingress_cidr" {
 
 variable "egress_source_port" {
   description = "souce port for ingress rule"
-  type        = string
+  type        = number
   default     = " "
 }
 
 variable "egress_destination_port" {
   description = "destination port for ingress rule"
-  type        = string
+  type        = number
   default     = " "
 }
 
