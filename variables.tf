@@ -70,3 +70,9 @@ variable "egress_cidr" {
   type        = list(string)
   default     = []
 }
+
+variable "instance_keypair" {
+  description = "ssh key pair name"
+  type        = string
+  default     = " "
+}

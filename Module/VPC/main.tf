@@ -65,10 +65,10 @@ resource "aws_security_group" "allow_traffic" {
   }
 
   egress {
-    from_port        = var.ingress_source_port
-    to_port          = var.ingress_destination_port
-    protocol         = var.ingress_destination_port
-    cidr_blocks      = var.ingress_cidr
+    from_port        = var.engress_source_port
+    to_port          = var.engress_destination_port
+    protocol         = var.engress_destination_port
+    cidr_blocks      = var.engress_cidr
   }
 
   tags = {

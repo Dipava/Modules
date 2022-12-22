@@ -60,4 +60,17 @@ output "sg_arn" {
   value       = module.vpc.sg_arn
 }
 
+output "instance_arn" {
+  description = "The ARN of the security group"
+  value       = aws_instance.test-vm.arn
+}
 
+output "instance_public_ip" {
+  description = "The ARN of the security group"
+  value       = aws_instance.test-vm.public_ip
+}
+
+output "instance_private_ip" {
+  description = "The ARN of the security group"
+  value       = aws_instance.test-vm.private_ip
+}

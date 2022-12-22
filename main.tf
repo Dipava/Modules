@@ -54,6 +54,7 @@ resource "aws_instance" "test-vm" {
   ami           = data.aws_ami.amzlinux2.id
   instance_type = "t2.micro"
   associate_public_ip_address = true
+  key_name = var.instance_keypair
   iam_instance_profile = "ec2-admin-role"
   subnet_id = module.vpc.vpc_subnets
   vpc_security_group_ids = [module.vpc.sg_id]
