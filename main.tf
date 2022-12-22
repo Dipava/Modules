@@ -38,6 +38,7 @@ module "vpc" {
   enable_dns_hostnames = false
   enable_dns_support   = true
   sg_name = "${local.name}-SG"
+  sg_description = "SG for ${local.environment}-${local.project}"
   ingress_source_port = var.ingress_source_port
   ingress_destination_port = var.ingress_destination_port
   ingress_protocol = var.ingress_protocol
