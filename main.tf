@@ -37,14 +37,14 @@ module "vpc" {
   subnet_cidr  = var.vpc_subnets
   enable_dns_hostnames = false
   enable_dns_support   = true
-  ingress_source_port = 
-  ingress_destination_port = 
-  ingress_protocol = 
-  ingress_cidr = 
-  egress_source_port = 
-  egress_destination_port = 
-  egress_protocol = 
-  egress_cidr = 
+  ingress_source_port = var.ingress_source_port
+  ingress_destination_port = var.ingress_destination_port
+  ingress_protocol = var.ingress_protocol
+  ingress_cidr = var.ingress_cidr
+  egress_source_port = var.egress_source_port
+  egress_destination_port = var.egress_destination_port
+  egress_protocol = var.egress_protocol
+  egress_cidr = var.egress_cidr
 }
 
 resource "aws_instance" "test-vm" {
