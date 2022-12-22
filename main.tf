@@ -48,6 +48,7 @@ module "vpc" {
 }
 
 resource "aws_instance" "test-vm" {
+  depends_on = [module.vpc]
   ami           = data.aws_ami.amzlinux2.id
   instance_type = "t2.micro"
   associate_public_ip_address = true
