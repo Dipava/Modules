@@ -11,4 +11,4 @@ egress_source_port = 0
 egress_destination_port = 0
 egress_protocol = "-1"
 egress_cidr = ["0.0.0.0/0"]
-instance_keypair = "ssh-key.pem"
+instance_keypair = "ssh-key"
