@@ -5,10 +5,10 @@ owners = "Dipava"
 project = "linuxproject"
 name = "${local.environment}-${local.project}"
 tags = {
-    owners = local.owners
-    environment = local.environment
-    project = local.project
-    name = "${local.environment}-${local.project}"
+    Owners = local.owners
+    Environment = local.environment
+    Project = local.project
+    Name = "${local.environment}-${local.project}"
     }
 }
 
