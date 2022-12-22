@@ -1,7 +1,7 @@
 variable "environment" {
   description = "Build Environment"
   type        = string
-  default     = " "
+  default     = "dev"
 }
 
 variable "owners" {
